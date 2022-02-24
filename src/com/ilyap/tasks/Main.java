@@ -8,10 +8,10 @@ public class Main {
         int n = scanner.nextInt();
 
         long start = System.currentTimeMillis();
-        System.out.println(Fibonacci.fib(n));
+        System.out.println("fib(" + n + "): " + Fibonacci.fib(n));
         long end = System.currentTimeMillis();
 
-        System.out.println(end - start);
+        System.out.println("Time spent: " + (end - start) + " ms.");
         scanner.close();
     }
 }
