@@ -10,7 +10,7 @@ package com.ilyap.tasks;
  */
 
 public final class Fibonacci {
-    private static final long[] cache = new long[200];
+    private static final long[] cache = new long[93];
 
     private Fibonacci() {
     }
