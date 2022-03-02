@@ -19,7 +19,6 @@ public final class Fibonacci {
     }
 
     public static BigInteger fib(long n) {
-        BigInteger bigN = BigInteger.valueOf(n);
         if (n <= 1) {
             return BigInteger.valueOf(n);
         } else if (cache.containsKey(n)) {
