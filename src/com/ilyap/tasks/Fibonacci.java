@@ -1,5 +1,8 @@
 package com.ilyap.tasks;
 
+import java.math.BigInteger;
+import java.util.*;
+
 /**
  * Рекурсивный способ может работать долго, потому что в процессе вычисления
  * функция будет много раз вызываться от одного и того же аргумента
@@ -10,18 +13,21 @@ package com.ilyap.tasks;
  */
 
 public final class Fibonacci {
-    private static final long[] cache = new long[93];
+    private static final Map<Long, BigInteger> cache = new TreeMap<>();
 
     private Fibonacci() {
     }
 
-    public static long fib(int n) {
+    public static BigInteger fib(long n) {
+        BigInteger bigN = BigInteger.valueOf(n);
         if (n <= 1) {
-            return n;
-        } else if (cache[n] != 0) {
-            return cache[n];
+            return BigInteger.valueOf(n);
+        } else if (cache.containsKey(n)) {
+            return cache.get(n);
         } else {
-            return cache[n] = fib(n - 1) + fib(n - 2);
+            BigInteger v = fib(n - 2).add(fib(n - 1));
+            cache.put(n, v);
+            return v;
         }
     }
 }

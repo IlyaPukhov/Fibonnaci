@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+        long n = scanner.nextLong();
 
         long start = System.currentTimeMillis();
         System.out.println("fib(" + n + "): " + Fibonacci.fib(n));
